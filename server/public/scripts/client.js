@@ -6,7 +6,7 @@ function init() {
 };
 
 function addTask() {
-    const task = $('.taskIn').val();
+    const task = $('.js-taskIn').val();
     let completed = $('.#')
 }
 
