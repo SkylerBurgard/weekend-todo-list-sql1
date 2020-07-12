@@ -54,7 +54,9 @@ function postTask(tasksToSend) {
 }; // function to post request to front end
 
 function deleteTask() {
-    const id = $(this).parent().parent().data('id');
+    console.log('delete');
+    const id = $(this).parent().data('id');
+    console.log(id);
     $.ajax({
             type: 'DELETE',
             url: '/list/delete' + id
@@ -86,7 +88,9 @@ function render(tasks) {
         const task = tasks[i];
         console.log(task);
         $('#viewTasks').append(`
-        <p>${task.task}</p>
+        <p data-id=${task.id}>${task.task}</p>
+        <button id='js-btn-delete'>Delete</button>
     `);
+
     }
 }
