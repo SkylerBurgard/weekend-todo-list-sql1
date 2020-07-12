@@ -30,7 +30,7 @@ function addTask() {
 function getTask() {
     $.ajax({
             type: 'GET',
-            url: '/toDo'
+            url: '/list'
         })
         .then((dbResponse) => {
             console.log(dbResponse);
@@ -44,7 +44,7 @@ function getTask() {
 function postTask(tasksToSend) {
     $.ajax({
             method: 'POST',
-            url: '/list',
+            url: '/task',
             data: objectToSend,
         })
         .then(function (dbResponse) {
@@ -57,7 +57,7 @@ function deleteTask() {
     const id = $(this).parent().parent().data('id');
     $.ajax({
             type: 'DELETE',
-            url: '/toDo/delete' + id
+            url: '/list/delete' + id
         })
         .then(function (dbResponse) {
             getTask();
@@ -78,6 +78,15 @@ function deleteTask() {
 
 
 
-//     function render(tasks) {
+function render(tasks) {
+    console.log(tasks);
+    $('#viewTask').empty();
 
-//     }
+    for (let newTask of tasks) {
+        $('#viewTask').append(`
+        <tr>
+        <td>${newTask.task}</td>
+        </tr>
+    `)
+    }
+}
