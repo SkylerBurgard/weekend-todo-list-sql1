@@ -1,9 +1,9 @@
-# Project Name
+# Weekend to-do application
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+## This app allows users to input tasks that need to be completed. Users can update tasks to complete and add new ones. Users can also delete tasks from their list as needed.
 
-## Description
+### Duration to complete: 3 days
 
-Your project description goes here. What problem did you solve? How did you solve it?
+# Technologies used:
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+#### HTML/CSS, JavaScript, node, express, postgresQL
