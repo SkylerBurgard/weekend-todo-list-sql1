@@ -1,0 +1,23 @@
+body {
+    background-color: #fcf083
+}
+
+header {
+    text-align: center;
+}
+
+
+table {
+    width: 100%;
+}
+
+td {
+    width: 100px;
+    text-align: center;
+}
+
+th {
+    background-color: #47f512;
+    color: #F5F5F5;
+    text-align: center;
+}

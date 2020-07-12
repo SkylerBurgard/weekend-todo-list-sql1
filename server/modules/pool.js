@@ -1,8 +1,7 @@
-const express = require('express');
+// const express = require('express');
 // const router = express.Router();
 const pg = require('pg');
 const Pool = pg.Pool;
-const pool = new Pool(config);
 
 const config = {
     database: 'weekend_todo_list', // name of database
@@ -12,6 +11,7 @@ const config = {
     idleTimeoutMillis: 10000, // attepmt to connect for 10 seconds
 };
 
+const pool = new Pool(config);
 
 pool.on('connect', () => {
     console.log('postgresql connected!');

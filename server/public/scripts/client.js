@@ -39,7 +39,7 @@ function getTask() {
         .catch((error) => {
             console.log(error);
         });
-}
+} // function to get our task data from front end
 
 function postTask(tasksToSend) {
     $.ajax({
@@ -51,23 +51,33 @@ function postTask(tasksToSend) {
             console.log(dbResponse);
         });
     getTask(dbResponse);
-};
+}; // function to post request to front end
 
 function deleteTask() {
-    const id =
-        $.ajax({
+    const id = $(this).parent().parent().data('id');
+    $.ajax({
             type: 'DELETE',
             url: '/toDo/delete' + id
         })
         .then(function (dbResponse) {
             getTask();
-        })
+        });
+} // our delete request
 
-}
+// function completeTask() {
+//     let id = $(this).parent().parent().data('id');
 
-function completeTask() {
+//     $.ajax({
+//             type: 'PUT',
+//             url: '/toDo/completed' = id
+//         })
+//         .then(function (dbResponse) {
+//             getTask();
+//         })
 
 
 
 
-    function render(tasks) {}
+//     function render(tasks) {
+
+//     }
