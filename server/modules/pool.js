@@ -4,7 +4,7 @@ const pg = require('pg');
 const Pool = pg.Pool;
 
 const config = {
-    database: 'weekend_todo_list', // name of database
+    database: 'weekend-to-do-app', // name of database
     host: 'localhost',
     port: 5432,
     max: 10, // max number of concurrent connections

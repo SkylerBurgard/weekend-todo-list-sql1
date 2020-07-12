@@ -5,7 +5,7 @@ const pool = require('../modules/pool');
 
 taskRouter.get('/', (req, res) => {
     // console.log('in GET');
-    const queryText = `SELECT * FROM "tasks" ORDER BY "id" DESC;`;
+    const queryText = `SELECT * FROM "list" ORDER BY "id" DESC;`;
     pool.query(queryText)
         .then((dbResponse) => {
             console.log(dbResponse);

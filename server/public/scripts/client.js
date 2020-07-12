@@ -34,7 +34,7 @@ function getTask() {
         })
         .then((dbResponse) => {
             console.log(dbResponse);
-            render(tasks);
+            render(dbResponse);
         })
         .catch((error) => {
             console.log(error);
@@ -80,13 +80,13 @@ function deleteTask() {
 
 function render(tasks) {
     console.log(tasks);
-    $('#viewTask').empty();
+    // $('#viewTask').empty();
 
-    for (let newTask of tasks) {
-        $('#viewTask').append(`
-        <tr>
-        <td>${newTask.task}</td>
-        </tr>
-    `)
+    for (let i = 0; i < tasks.length; i++) {
+        const task = tasks[i];
+        console.log(task);
+        $('#viewTasks').append(`
+        <p>${task.task}</p>
+    `);
     }
 }
