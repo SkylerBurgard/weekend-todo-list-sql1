@@ -66,17 +66,17 @@ function deleteTask() {
         });
 } // our delete request
 
-// function completeTask() {
-//     let id = $(this).parent().parent().data('id');
+function completeTask() {
+    let id = $(this).parent().data('id');
 
-//     $.ajax({
-//             type: 'PUT',
-//             url: '/toDo/completed' = id
-//         })
-//         .then(function (dbResponse) {
-//             getTask();
-//         })
-
+    $.ajax({
+            type: 'PUT',
+            url: '/list/completed' + id
+        })
+        .then(function (dbResponse) {
+            getTask();
+        });
+}
 
 
 
@@ -90,6 +90,7 @@ function render(tasks) {
         $('#viewTasks').append(`
         <p data-id=${task.id}>${task.task}</p>
         <button id='js-btn-delete'>Delete</button>
+        <button id='js-btn-update'>Complete</button>
     `);
 
     }
